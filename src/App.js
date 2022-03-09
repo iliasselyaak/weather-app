@@ -1,4 +1,5 @@
 import WeatherWidget from "./components/WeatherWidget";
+import TodayWeather from "./components/TodayWeather";
 
 function App() {
   return (
@@ -6,7 +7,7 @@ function App() {
       <centre>
         <header>
           <h1>Test</h1>
-          <WeatherWidget />
+          <TodayWeather />
         </header>
       </centre>
     </div>
