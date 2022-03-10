@@ -258,4 +258,126 @@ opacity: 0.7;
   border-radius: 17px;
 }
 
+.location{
+  position: absolute;
+  width: 181px;
+  height: 20px;
+  left: 105px;
+  top: 32px;
 
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+
+  color: #000000;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.locationIcon {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  left: 76px;
+  top: 32px;
+
+}
+
+.locTBtn{
+  position: absolute;
+  width: 19px;
+  height: 18px;
+  right: 44px;
+  top: 33px;
+
+}
+
+.thisWeek {
+  position: absolute;
+  width: 92px;
+  height: 20px;
+  left: 86px;
+  top: 89px;
+
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+  border-bottom: 2px solid black;
+  border-radius: 1.5px;
+  
+}
+
+.threeWeek {
+  position: absolute;
+  width: 75px;
+  height: 20px;
+  left: 199px;
+  top: 89px;
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+}
+
+.appLine{
+  position: absolute;
+  width: 15px;
+  height: 0px;
+  left: 180px;
+  top: 98px;
+  
+  border: 0.1px solid #000000;
+  transform: rotate(-90deg);
+}
+
+.logo{
+  position: absolute;
+  left: 80px;
+  top: 150px;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+}
+
+.tW{
+  position: absolute;
+  width: 151px;
+  height: 35px;
+  left: 118px;
+  top: 150px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.045em;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.todayTime{
+  position: absolute;
+  width: 192px;
+  height: 28px;
+  left: 98px;
+  top: 171px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.045em;
+
+}
+
+.menu{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 22px;
+  top: 29px;
+}

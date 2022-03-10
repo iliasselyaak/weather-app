@@ -1,11 +1,16 @@
 import PropTypes from "prop-types";
 import SunnyImage from "../sunny.png";
+import logo from "../logo.png";
 import { FaChevronDown } from "react-icons/fa";
 
 const Button = ({color, text, onClick}) => {
     const Tmp = 20
+    const todayTime = "19th of February 2022"
     return (
         <div>
+        <img src={logo} height="38" width="36" className="logo"/>
+        <h3 className="tW">Today's Weather</h3>
+        <TodayDate todayTime={todayTime}/>
         <div className="btn" />
         <TMP Tmp = {Tmp}/>
         <Rain />
@@ -16,6 +21,13 @@ const Button = ({color, text, onClick}) => {
         <Line />
         <TriangleButton />
         </div>     
+    )
+}
+
+//Add a library to get today's time ddth of MM YY
+const TodayDate = ({todayTime}) => {
+    return (
+        <><h3 className="todayTime">{todayTime}</h3></>
     )
 }
 const TMP = ({Tmp}) => {
