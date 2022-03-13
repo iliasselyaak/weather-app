@@ -11,6 +11,7 @@ function App() {
           <Menu />
           <Location location='Hall Hill Farm, Durham'/>
           <TodayWeather />
+          <WeatherWidget />
           <h3 className="thisWeek">This week's</h3>
           <h3 className="appLine"></h3>
           <h3 className="threeWeek">3 months</h3>
