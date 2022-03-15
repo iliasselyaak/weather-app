@@ -1,56 +1,78 @@
-import PropTypes from "prop-types"
-import SunnyImage from "../sunny.png"
+import PropTypes from "prop-types";
+import SunnyImage from "../sunny.png";
+import { FaChevronRight } from "react-icons/fa";
 
 const WidgetButton = ({color, text, onClick}) => {
-    const Tmp = 16
+    const Tmp =16
     return (
         <div>
-        <div className="Widget" />
-            <TMP Tmp = {Tmp}/>
-            <Rain />
-            <Wind />
-            <Soil />
-            <Moisture />
-            <Image />
-            <Date />
+            <div className="Widget" style={{mixBlendMode: "hard-light"}}>
+                <Date />
+                <TMP Tmp = {Tmp}/>
+                <Rain />
+                <Wind />
+                <Soil />
+                <Moisture />
+                <Image />
+                <TriangleRButton/>
+            </div>
         </div>     
     )
 }
 const Date = () => {
-  return(
-    <h2 className="DateWidget">Sun</h2>
-  )
+    return (
+        <h1 className="DateWidget">Sun</h1>
+   )
 }
-
 const TMP = ({Tmp}) => {
     return (
-        <h3 className="CurrentTmpWidget">{Tmp}°C</h3>
+        <h2 className="CurrentTmpWidget">{Tmp}°C</h2>
    )
 }
 const Rain = () => {
     return (
-        <><h3 className="RainTWidget">Rain(%)</h3><h3 className="RainWidget">4</h3></>
+        <div className = "RainTWidget">
+        <h3>Rain(%)</h3>
+        <h2>4</h2>
+        </div>
    )
 }
 const Wind = () => {
     return (
-        <><h3 className="WindTWidget">Wind</h3><h3 className="WindWidget">10</h3></> 
+        <div  className="WindTWidget">
+            <h3>Wind</h3> 
+            <h2>10</h2>
+        </div>
    )
 }
 const Soil = () => {
     return (
-        <><h3 className="SoilTWidget">Soil Temp</h3><h3 className="SoilWidget">4.5</h3></> 
+        <div className="SoilTWidget">
+            <h3 >Soil Temp</h3>
+            <h2 >4.5</h2>
+        </div>
    )
 }
 const Moisture = () => {
     return (
-        <><h3 className="MoistTWidget">Moisture</h3><h3 className="MoistWidget">0.5</h3></> 
+        <div className="MoistTWidget">
+            <h3 >Moisture</h3>
+            <h2>0.5</h2>
+        </div>
    )
 }
 const Image = () => {
     return (
         <img src={SunnyImage} height = "21" width = "21" className = "SunnyImageWidget"/>
    )
+}
+
+const TriangleRButton = () => {
+    return (
+        <div className = "TBRtn">
+            <FaChevronRight />
+        </div>
+    )
 }
 
 

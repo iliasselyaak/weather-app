@@ -18,6 +18,12 @@
   font-family: 'Nunito';
 }
 
+.thisWeekSection{
+  position: relative;
+  height: 428px;
+  top: 370px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,7 +35,6 @@
   left: 12px;
   top: 425px;
 
-  font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
   font-size: 19px;
@@ -44,151 +49,101 @@
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.SunnyImageWidget{
-  position: absolute;
-  left: 80px;
-  top: 420px;
-}
-.Widget{
-  position: absolute;
-  width: 281px;
-  height: 50px;
-  left: 60px;
-  top: 414px;
-  
-  background: #C4C4C4;
-  mix-blend-mode: hard-light;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 13px;
 
+.Widget h3 {
+  text-align: center;
+  margin-bottom: 7px;
+
+  font-style: normal;
+  font-weight: 6000;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.025em;
+
+  color: #000000;
 }
-.CurrentTmpWidget{
-  position: absolute;
-  width: 39px;
-  height: 20px;
-  left: 71px;
-  top: 442px;
-  
-  font-family: 'Nunito';
+.Widget h2 {
+  text-align: center;
+
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
   text-align: center;
   letter-spacing: 0.075em;
-  
+
   color: #000000;
+
+}
+.Widget h1{
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.075em;
+
+  color: #000000;
+}
+
+
+.Widget{
+  position: relative;
+  width: 281px;
+  height: 50px;
+  left: 60px;
+  top: 50px;
+  display: block;
+  margin-bottom: 10px;
   
+  background: #C4C4C4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 13px;
+}
+.DateWidget{
+  position: absolute;
+  height: 20px;
+  left: -45px;
+  top: 17px;
+
+}
+.SunnyImageWidget{
+  position: absolute;
+  left: 20px;
+  top: 3px;
+}
+
+.CurrentTmpWidget{
+  position: absolute;
+  width: 39px;
+  height: 20px;
+  left: 10px;
+  top: 26px;
 }
 
 .RainTWidget{
   position: absolute;
   width: 41px;
   height: 13px;
-  left: 116px;
-  top: 420px;
-  
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  letter-spacing: 0.025em;
-  
-  color: #000000;
-  
-  opacity: 0.7;
-
-}
-
-.RainWidget{
-  position: absolute;
-  width: 9px;
-  height: 20px;
-  left: 130px;
-  top: 440px;
-  
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  text-align: center;
-  letter-spacing: 0.075em;
-  
-  color: #000000;
-  
+  left: 55px;
+  top: 5px;
 }
 
 .WindTWidget{ 
   position: absolute;
   width: 33px;
   height: 15px;
-  left: 166px;
-  top: 421px;
-
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  letter-spacing: 0.025em;
-
-  color: #000000;
-
-}
-
-.WindWidget{
-  position: absolute;
-  width: 131px;
-  height: 19px;
-  left: 167px;
-  top: 440px;
-  
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: 0.075em;
-  
-  color: #000000;
-
+  left: 103px;
+  top: 5px;
 }
 
 .SoilTWidget{
   position: absolute;
-  width: 53px;
+  width: 55px;
   height: 15px;
-  left: 202px;
-  top: 421px;
-
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  letter-spacing: 0.025em;
-
-  color: #000000;
-
-}
-
-.SoilWidget{
-  position: absolute;
-  width: 29px;
-  height: 20px;
-  left: 214px;
-  top: 440px;
-
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: 0.075em;
-
-  color: #000000;
+  left: 145px;
+  top: 5px;
 
 }
 
@@ -196,38 +151,14 @@
   position: absolute;
   width: 73px;
   height: 13px;
-  left: 261px;
-  top: 421px;
-
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 14px;
-  letter-spacing: 0.025em;
-
-  color: #000000;
-
-
+  left: 195px;
+  top: 5px;
 }
 
-.MoistWidget{
+.TBRtn{
   position: absolute;
-  width: 28px;
-  height: 19px;
-  left: 270px;
-  top: 440px;
-
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: 0.075em;
-
-  color: #000000;
-
-
+  top: 17px;
+  left: 258px;
 }
 
 
@@ -273,7 +204,6 @@
   left: 244px;
   top: 285px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -294,7 +224,6 @@
   left: 264px;
   top: 311px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -312,7 +241,6 @@
   left: 170px;
   top: 311px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -329,7 +257,6 @@
   left: 142px;
   top: 285px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -350,7 +277,6 @@
   left: 245px;
   top: 217px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -371,7 +297,6 @@ opacity: 0.7;
   left: 273px;
   top: 238px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -389,7 +314,6 @@ opacity: 0.7;
   left: 164px;
   top: 217px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -408,7 +332,6 @@ opacity: 0.7;
   left: 181px;
   top: 239px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -425,7 +348,6 @@ opacity: 0.7;
   left: 60px;
   top: 329px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 22px;
@@ -442,7 +364,6 @@ opacity: 0.7;
   left: 46px;
   top: 303px;
 
-  font-family: Nunito;
   font-style: normal;
   font-weight: normal;
   font-size: 22px;
@@ -472,7 +393,6 @@ opacity: 0.7;
   left: 105px;
   top: 32px;
 
-  font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -509,28 +429,32 @@ opacity: 0.7;
   left: 86px;
   top: 89px;
 
-  font-weight: bold;
+  font-weight: 400;
   font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.075em;
-  border-bottom: 2px solid black;
-  border-radius: 1.5px;
-  
+  cursor: pointer;
 }
 
-.threeWeek {
+
+.threeMonth {
   position: absolute;
   width: 75px;
   height: 20px;
   left: 199px;
   top: 89px;
 
-  font-family: 'Nunito';
-  font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.075em;
+  cursor: pointer;
+}
+
+.active{
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  border-radius: 1.5px;
 }
 
 .appLine{
@@ -587,4 +511,38 @@ opacity: 0.7;
   height: 24px;
   left: 22px;
   top: 29px;
+}
+
+.weekTitle{
+  position: absolute;
+  width: 180px;
+  height: 26px;
+  left: 95px;
+  top: 10px;
+
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0.045em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.monthWidget{
+  position: relative;
+  top: 90spx;
+  margin-bottom: 80px;
+}
+
+.month{
+  position: absolute;
+  width: 205px;
+  height: 30px;
+  left: 77px;
+
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.075em;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
