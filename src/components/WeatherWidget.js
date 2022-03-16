@@ -2,26 +2,25 @@ import PropTypes from "prop-types";
 import SunnyImage from "../sunny.png";
 import { FaChevronRight } from "react-icons/fa";
 
-const WidgetButton = ({color, text, onClick}) => {
+const WidgetButton = ({day,color, text, onClick}) => {
     const Tmp =16
     return (
-        <div>
-            <div className="Widget" style={{mixBlendMode: "hard-light"}}>
-                <Date />
+        <div className = "Widget">
+            <rect className="Widgetbar"/>
+                <Date Day={day}/>
                 <TMP Tmp = {Tmp}/>
                 <Rain />
                 <Wind />
                 <Soil />
                 <Moisture />
                 <Image />
-                <TriangleRButton/>
-            </div>
+                <TriangleRButton/> 
         </div>     
     )
 }
-const Date = () => {
+const Date = ({Day}) => {
     return (
-        <h1 className="DateWidget">Sun</h1>
+        <h1 className="DateWidget">{Day}</h1>
    )
 }
 const TMP = ({Tmp}) => {

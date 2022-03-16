@@ -3,32 +3,41 @@ import TodayWidget from "./TodayWidget";
 import PropTypes from "prop-types";
 import logo from "../logo.png";
 
-const Button = ({color, text, onClick}) => {
-    const todayTime = "19th of February 2022"
+const TodayWeather = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
+    const days = addDays();
+    console.log(days);
     return (
         <div>
         <img src={logo} height="38" width="36" className="logo"/>
         <h3 className="tW">Today's Weather</h3>
-        <TodayDate todayTime={todayTime}/>
+        <TodayDate/>
         <TodayWidget />
         <section className="thisWeekSection">
-            <h3 className="weekTitle">This week's weather</h3>   
-            <WeatherButton/>
-            <WeatherButton/>
-            <WeatherButton/>
-            <WeatherButton/>
-            <WeatherButton/>
-            <WeatherButton/>
+            <h3 className="weekTitle">This week's weather</h3>
+            {days.map(function(day,index) {
+                return <WeatherButton key={index} day={day}/>
+            })}
         </section>
         </div>     
     )
 }
 
-//Add a library to get today's time ddth of MM YY
-const TodayDate = ({todayTime}) => {
+const TodayDate = () => {
+    const moment = require('moment');
+    const todayTime = moment().format('Do [of] MMMM YYYY');
     return (
         <><h3 className="todayTime">{todayTime}</h3></>
     )
 }
 
-export default Button
+const addDays = () => {
+    const moment = require('moment');
+    const days = [];
+    for(var i =1; i<7;i++){
+        days.push(moment().add(i,'days').format('ddd'));
+    }
+    return days
+}
+
+
+export default TodayWeather

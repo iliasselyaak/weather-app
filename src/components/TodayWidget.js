@@ -2,11 +2,12 @@ import PropTypes from "prop-types"
 import SunnyImage from "../sunny.png"
 import { FaChevronDown } from "react-icons/fa";
 
-const TodayWidget = ({color, text, onClick}) => {
-    const Tmp =16
+
+const Button = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
+    const Tmp = 11
     return (
-            <div>
-            <div className="btn" />
+        <div className = "todayWidget">
+            <rect className="btn"/>
             <TMP Tmp = {Tmp}/>
             <Rain />
             <Wind />
@@ -14,34 +15,48 @@ const TodayWidget = ({color, text, onClick}) => {
             <Moisture />
             <Image Tmp = {Tmp} />
             <Line />
-            <TriangleButton />
-            </div>
+        </div>     
     )
 }
 
 const TMP = ({Tmp}) => {
     return (
-        <><h3 className="Tmp">{Tmp}°C</h3><h3 className="NTmp">5°C</h3></>
+        <div className="Tmp">
+            <h2 >{Tmp}°C</h2>
+            <h2 >15°C</h2>
+        </div>
    )
 }
 const Rain = () => {
     return (
-        <><h3 className="RainT">Rain(%)</h3><h3 className="Rain">3</h3></>
+        <div className="RainT">
+            <h3>Rain(%)</h3>
+            <h2>99</h2>
+        </div>
    )
 }
 const Wind = () => {
     return (
-        <><h3 className="WindT">Wind(mph)</h3><h3 className="Wind">5</h3></> 
+        <div className="WindT">
+            <h3>Wind(mph)</h3>
+            <h2>225</h2>
+        </div> 
    )
 }
 const Soil = () => {
     return (
-        <><h3 className="SoilT">Soil Temp(°C)</h3><h3 className="Soil">5.9</h3></> 
+        <div className="SoilT">
+            <h3 >Soil Temp(°C)</h3>
+            <h2 >55.9</h2>
+        </div> 
    )
 }
 const Moisture = () => {
     return (
-        <><h3 className="MoistT">Moisture(°C)</h3><h3 className="Moist">0.3</h3></> 
+        <div className="MoistT">
+            <h3 >Moisture(°C)</h3>
+            <h2 >20.3</h2>
+        </div> 
    )
 }
 const Image = ({Tmp}) => {
@@ -62,15 +77,12 @@ return (
         <hr className = "LineH"></hr>
     </div>
 )
-}
 
 const TriangleButton = () => {
     return (
-        <div className = "TBtn">
-            <FaChevronDown />
-        </div>
+        <Button>  </Button>
     )
+
 }
-
-
-export default TodayWidget
+}
+export default Button
