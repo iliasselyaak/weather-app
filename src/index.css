@@ -260,13 +260,28 @@
   border: 0.1px solid #000000;
   transform: rotate(-90deg);
 }
+
+.TBtn{
+  position: absolute;
+  top:148px;
+  left:201.5px;
+}
+
 .TBRtn{
   position: absolute;
   top: 17px;
   left: 258px;
 }
 
-.location{
+
+::placeholder { 
+  color: black;
+}
+input:focus::placeholder { 
+  opacity: 0;
+}
+
+.location {
   position: absolute;
   width: 181px;
   height: 20px;
@@ -278,6 +293,8 @@
   font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.075em;
+  border: none;
+  background: none;
 
   color: #000000;
 
@@ -289,17 +306,18 @@
   width: 19px;
   height: 19px;
   left: 76px;
-  top: 32px;
+  top: 31px;
 
 }
 
-.locTBtn{
+.locTBtn *{
   position: absolute;
-  width: 19px;
-  height: 18px;
-  right: 44px;
-  top: 33px;
-
+  right: 22px;
+  top: 15px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .thisWeek {

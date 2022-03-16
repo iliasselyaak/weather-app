@@ -56,11 +56,7 @@ const App = () => {
           <h3 className="appLine"></h3>
           <h3 className={active === "MonthlyWeather" ? "threeMonth active" : "threeMonth"} onClick={() => setActive("MonthlyWeather")}>3 months</h3>
           {active === "TodayWeather" && <TodayWeather/>}
-          {active === "MonthlyWeather" &&
-            <SimpleBar style={{ height: '680px',marginTop:"120px"}}>
-              {<MonthlyWeather/>}
-            </SimpleBar>
-          }  
+          {active === "MonthlyWeather" && <MonthlyWeather/>}  
         </header>
       </centre>
     </div>

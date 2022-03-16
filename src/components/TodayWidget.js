@@ -3,7 +3,7 @@ import SunnyImage from "../sunny.png"
 import { FaChevronDown } from "react-icons/fa";
 
 
-const Button = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
+const TodayWidget = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
     const Tmp = 11
     return (
         <div className = "todayWidget">
@@ -15,6 +15,7 @@ const Button = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
             <Moisture />
             <Image Tmp = {Tmp} />
             <Line />
+            <TriangleButton/>
         </div>     
     )
 }
@@ -77,12 +78,14 @@ return (
         <hr className = "LineH"></hr>
     </div>
 )
-
+}
 const TriangleButton = () => {
     return (
-        <Button>  </Button>
+        <div className="TBtn">
+            <FaChevronDown />
+        </div>
     )
 
 }
-}
-export default Button
+
+export default TodayWidget

@@ -1,21 +1,24 @@
 import React from 'react';
 import {MdLocationOn} from "react-icons/md";
-import { FaChevronDown } from "react-icons/fa";
+import { CgEnter } from "react-icons/cg";
+
 
 const Location = ({location}) => {
   return (
     <div>
-      <h3 className='location'>{location}</h3>
+      <form>
+      <input className='location' placeholder={location} />
       <MdLocationOn className='locationIcon'/>
-      <TriangleButton />
+      <InputButton/>
+      </form>
     </div>
   )
 }
 
-const TriangleButton = () => {
+const InputButton = () => {
   return (
       <div className = "locTBtn">
-      <FaChevronDown />
+      <button type='submit'><CgEnter size={20}/></button>
       </div>
   )
 }
