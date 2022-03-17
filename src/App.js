@@ -11,7 +11,7 @@ const api = {
   base: "https://api.agromonitoring.com/agro/1.0/weather?"
 }
 
-const App = () => {
+function App () {
   const [active, setActive] = useState("TodayWeather")
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
@@ -19,7 +19,7 @@ const App = () => {
   const search = (evt) => {
     if (evt.key === "Enter") {
       fetch(
-        `${api.base}weather?&lat=51.5072&lon=0.1276&units=metric&appid=${api.key}`
+        `${api.base}weather?&lat=32&lon=31&units=metric&appid=${api.key}`
       )
         .then((res) => res.json())
         .then((result) => {

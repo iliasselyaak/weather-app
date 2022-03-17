@@ -3,23 +3,22 @@ import TodayWidget from "./TodayWidget";
 import PropTypes from "prop-types";
 import logo from "../logo.png";
 
-const TodayWeather = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
-    const days = addDays();
-    console.log(days);
-    return (
-        <div>
-        <img src={logo} height="38" width="36" className="logo"/>
-        <h3 className="tW">Today's Weather</h3>
-        <TodayDate/>
-        <TodayWidget />
-        <section className="thisWeekSection">
-            <h3 className="weekTitle">This week's weather</h3>
-            {days.map(function(day,index) {
-                return <WeatherButton key={index} day={day}/>
-            })}
-        </section>
-        </div>     
-    )
+ const TodayWeather = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
+     const days = addDays();
+     return (
+         <div>
+         <img src={logo} height="38" width="36" className="logo"/>
+         <h3 className="tW">Today's Weather</h3>
+         <TodayDate/>
+         <TodayWidget />
+         <section className="thisWeekSection">
+             <h3 className="weekTitle">This week's weather</h3>
+             {days.map(function(day,index) {
+                 return <WeatherButton key={index} day={day}/>
+             })}
+         </section>
+         </div>     
+     )
 }
 
 const TodayDate = () => {

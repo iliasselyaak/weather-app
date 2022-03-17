@@ -9,10 +9,7 @@ const MonthlyWeather = () => {
         <SimpleBar style={{ height: '680px',marginTop:"120px"}}>
         {
           <div>
-          <MonthWidget />
-          <MonthWidget />
-          <MonthWidget />
-          <MonthWidget />
+          <MonthWidget/>
           </div>
         }
         </SimpleBar>
