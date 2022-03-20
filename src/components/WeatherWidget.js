@@ -31,7 +31,7 @@ const TMP = ({Tmp}) => {
 const Rain = () => {
     return (
         <div className = "RainTWidget">
-        <h3>Rain(%)</h3>
+        <h3>Rain(mm)</h3>
         <h2>4</h2>
         </div>
    )

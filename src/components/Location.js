@@ -4,21 +4,21 @@ import { CgEnter } from "react-icons/cg";
 import App from '../App';
 
 
-const Location = ({location}) => {
+const Location = (props) => {
+  const {updateCity, fetchWeather} = props;
   return (
     <div className='search-box'>
       {/* <input className='location' placeholder={location} /> */}
+      <form onSubmit={fetchWeather}>
       <input
         type='text'
         className='location'
         placeholder='search...'
-        onChange = {(e)=> App.setQuery(e.target.value)}
-        value = {App.query}
-        onKeyPress = {App.search}
-      >
-      </input>
-      <MdLocationOn className='locationIcon'/>
+        onChange = {(e)=> updateCity(e.target.value)}
+      />
       <InputButton/>
+      </form>
+      <MdLocationOn className='locationIcon'/>
     </div>
   )
 }

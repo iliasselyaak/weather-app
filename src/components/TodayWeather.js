@@ -3,14 +3,22 @@ import TodayWidget from "./TodayWidget";
 import PropTypes from "prop-types";
 import logo from "../logo.png";
 
- const TodayWeather = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
+ const TodayWeather = (props) => {
      const days = addDays();
+     const {weather} = props;
      return (
          <div>
          <img src={logo} height="38" width="36" className="logo"/>
          <h3 className="tW">Today's Weather</h3>
          <TodayDate/>
-         <TodayWidget />
+         <TodayWidget 
+            dayTemp={`${Math.floor(weather?.main?.temp_max - 273)}°C`}
+            nightTemp={`${Math.floor(weather?.main?.temp_min - 273)}°C`} 
+            rain={'NaN'}
+            wind={`${Math.floor(weather?.wind?.speed*2.237)}`} //Conver m/s to mph
+            soilTemp={'NaN'}
+            moisture={`${weather?.main?.humidity}`} //Humidity for now
+            />
          <section className="thisWeekSection">
              <h3 className="weekTitle">This week's weather</h3>
              {days.map(function(day,index) {
