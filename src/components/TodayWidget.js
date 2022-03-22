@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import SunnyImage from "../sunny.png"
 import { FaChevronDown } from "react-icons/fa";
 

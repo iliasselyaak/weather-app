@@ -5,15 +5,14 @@ import App from '../App';
 
 
 const Location = (props) => {
-  const {updateCity, fetchWeather} = props;
+  const {updateCity, fetchWeather,weather} = props;
   return (
     <div className='search-box'>
-      {/* <input className='location' placeholder={location} /> */}
       <form onSubmit={fetchWeather}>
       <input
         type='text'
         className='location'
-        placeholder='search...'
+        placeholder={weather == undefined ? ('Select Location') : (`${weather?.name},${weather?.sys?.country}`)}
         onChange = {(e)=> updateCity(e.target.value)}
       />
       <InputButton/>

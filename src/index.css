@@ -6,7 +6,6 @@
   background-position: top;
   width: 360px;
   height: 800px;
-  border: solid blue;
   border-width: thin;
   overflow:hidden;
   display:block;
@@ -17,6 +16,27 @@
   position: relative;
   font-family: 'Nunito';
 }
+
+.home{
+  width: 360px;
+  height: 800px;
+}
+
+.home-logo{
+  position:absolute;
+  left: 118px;
+  top: 292px;
+  width: 130px;
+  height: 143px;
+}
+
+.home-location{
+  height: 70px;
+  position: relative;
+  top: 420px;
+
+}
+
 
 .thisWeekSection{
   position: relative;
@@ -403,14 +423,6 @@ input:focus::placeholder {
 
 }
 
-.menu{
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 22px;
-  top: 29px;
-}
-
 .weekTitle{
   position: absolute;
   width: 180px;
@@ -427,7 +439,7 @@ input:focus::placeholder {
 
 .monthWidget{
   position: relative;
-  top: 90spx;
+  top: 10px;
   margin-bottom: 80px;
 }
 

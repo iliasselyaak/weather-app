@@ -3,7 +3,7 @@ import SunnyImage from "../sunny.png";
 import { FaChevronRight } from "react-icons/fa";
 
 const WidgetButton = ({day,color, text, onClick}) => {
-    const Tmp =16
+    const Tmp ='Nan'
     return (
         <div className = "Widget">
             <rect className="Widgetbar"/>
@@ -32,7 +32,7 @@ const Rain = () => {
     return (
         <div className = "RainTWidget">
         <h3>Rain(mm)</h3>
-        <h2>4</h2>
+        <h2>Nan</h2>
         </div>
    )
 }
@@ -40,7 +40,7 @@ const Wind = () => {
     return (
         <div  className="WindTWidget">
             <h3>Wind</h3> 
-            <h2>10</h2>
+            <h2>NaN</h2>
         </div>
    )
 }
@@ -48,7 +48,7 @@ const Soil = () => {
     return (
         <div className="SoilTWidget">
             <h3 >Soil Temp</h3>
-            <h2 >4.5</h2>
+            <h2 >NaN</h2>
         </div>
    )
 }
@@ -56,7 +56,7 @@ const Moisture = () => {
     return (
         <div className="MoistTWidget">
             <h3 >Moisture</h3>
-            <h2>0.5</h2>
+            <h2>NaN</h2>
         </div>
    )
 }
