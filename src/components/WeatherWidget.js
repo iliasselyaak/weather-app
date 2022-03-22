@@ -1,7 +1,14 @@
-import SunnyImage from "../sunny.png";
+import SunnyImage from "./../Images/SunnyTodayWidget.png";
 import { FaChevronRight } from "react-icons/fa";
+import Sunny from "./../Images/SunnyWidget.PNG";
+import Snowy from "./../Images/SnowyWidget.PNG";
+import Rainy from "./../Images/RainyWidget.PNG";
+import Cloudy from "./../Images/CloudyWidget.PNG";
+import ThunderStorm from "./../Images/ThunderstormWidget.PNG";
+import Mist from "./../Images/MistWidget.png";
 
-const WidgetButton = ({weather,i,day,color, text, onClick}) => {
+
+const WidgetButton = ({weather,i,day}) => {
     return (
         <div className = "Widget">
             <rect className="Widgetbar"/>
@@ -11,7 +18,7 @@ const WidgetButton = ({weather,i,day,color, text, onClick}) => {
                 <Wind weather={weather} i={i}/>
                 <Soil weather={weather} i={i}/>
                 <Pressure weather={weather} i={i}/>
-                <Image />
+                <Image description={`${weather?.list[i+7*(i+1)]?.weather[0]?.main}`}/>
                 <TriangleRButton/> 
         </div>     
     )
@@ -24,7 +31,6 @@ const Date = ({day}) => {
 const TMP = ({i,weather}) => {
     return (
         <h2 className="CurrentTmpWidget"> {(weather.list[i+7*(i+1)] !== undefined) ? `${Math.floor(weather?.list[i+7*(i+1)]?.main?.temp_max - 273)}°C` : '10°C'}</h2>
-        //<h2 className="CurrentTmpWidget"> {`${Math.floor(weather?.list[i+7*(i+1)]?.main?.temp_max - 273)}°C`}</h2>
    )
 }
 const Humidity = ({i,weather}) => {
@@ -59,10 +65,28 @@ const Pressure = ({i,weather}) => {
         </div>
    )
 }
-const Image = () => {
-    return (
-        <img src={SunnyImage} height = "21" width = "21" className = "SunnyImageWidget"/>
-   )
+const Image = ({description}) => {
+    if (description === "Thunderstorm"){
+        return (<img src={ThunderStorm} height = "21" width = "21" className = "ImageWidget"/>)   
+    }
+    else if (description === "Drizzle" || description === "Rain"){
+        return (<img src={Rainy} height = "21" width = "21" className = "ImageWidget"/>)
+    } 
+    else if (description === "Snow"){
+        return (<img src={Snowy} height = "21" width = "21" className = "ImageWidget"/>)
+    }
+    else if (description === "Mist" || description === "Smoke" || description === "Dust" || description === "Fog" || description === "Ash" || description === "Squall" || description === "Tornado"){
+        return (<img src={Mist} height = "21" width = "21" className = "ImageWidget"/>)
+    } 
+    else if (description === "Clear"){
+        return (<img src={Sunny} height = "21" width = "21" className = "ImageWidget"/>)
+    }
+    else if (description === "Clouds"){
+        return (<img src={Cloudy} height = "21" width = "21" className = "ImageWidget"/>)
+    }
+    else{
+        return (<></>)
+    }
 }
 
 const TriangleRButton = () => {

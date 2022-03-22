@@ -5,12 +5,14 @@ import logo from "../logo.png";
  const TodayWeather = (props) => {
      const days = addDays();
      const {weather} = props;
+     
      return (
          <div>
          <img src={logo} height="38" width="36" className="logo"/>
          <h3 className="tW">Today's Weather</h3>
          <TodayDate/>
          <TodayWidget 
+            description={`${weather?.list[0]?.weather[0]?.main}`}
             dayTemp={`${Math.floor(weather?.list[0]?.main?.temp_max - 273)}°C`}
             nightTemp={`${Math.floor(weather?.list[0]?.main?.temp_min - 273)}°C`} 
             humidity={`${weather?.list[0]?.main?.humidity}`}
@@ -44,6 +46,7 @@ const addDays = () => {
     }
     return days
 }
+
 
 
 export default TodayWeather

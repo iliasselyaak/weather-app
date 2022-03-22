@@ -1,8 +1,12 @@
-import SunnyImage from "../sunny.png"
 import { FaChevronDown } from "react-icons/fa";
+import Sunny from "./../Images/SunnyTodayWidget.png";
+import Snowy from "./../Images/SnowTodayWidget.PNG";
+import Rainy from "./../Images/RainyTodayWidget.PNG";
+import Cloudy from "./../Images/CloudyTodayWidget.png";
+import ThunderStorm from "./../Images/ThunderstormTodayWidget.png";
+import Mist from "./../Images/MistTodayWidget.PNG";
 
-
-const TodayWidget = ({icon, dayTemp, nightTemp, humidity, wind, soilTemp, pressure}) => {
+const TodayWidget = ({description, dayTemp, nightTemp, humidity, wind, soilTemp, pressure}) => {
     return (
         <div className = "todayWidget">
             <rect className="btn"/>
@@ -11,7 +15,7 @@ const TodayWidget = ({icon, dayTemp, nightTemp, humidity, wind, soilTemp, pressu
             <Wind wind={wind}/>
             <Soil soilTemp = {soilTemp}/>
             <Pressure pressure={pressure}/>
-            <Image />
+            <Image description={description}/>
             <Line />
             <TriangleButton/>
         </div>     
@@ -58,15 +62,27 @@ const Pressure = ({pressure}) => {
         </div> 
    )
 }
-const Image = ({Tmp}) => {
-    if (Tmp > 15){
-         return (<img src={SunnyImage} height = "84" width = "84" className = "ImageButton"/>)
+const Image = ({description}) => {
+    if (description === "Thunderstorm"){
+        return (<img src={ThunderStorm} height = "84" width = "84" className = "ImageButton"/>)   
     }
-    else if ((Tmp < 15) && (Tmp > 10)){
-        return (<img src={SunnyImage} height = "84" width = "84" className = "ImageButton"/>)
+    else if (description === "Drizzle" || description === "Rain"){
+        return (<img src={Rainy} height = "84" width = "84" className = "ImageButton"/>)
+    } 
+    else if (description === "Snow"){
+        return (<img src={Snowy} height = "84" width = "84" className = "ImageButton"/>)
     }
-    else {
-        return (<img src={SunnyImage} height = "84" width = "84" className = "ImageButton"/>)
+    else if (description === "Mist" || description === "Smoke" || description === "Dust" || description === "Fog" || description === "Ash" || description === "Squall" || description === "Tornado"){
+        return (<img src={Mist} height = "84" width = "84" className = "ImageButton"/>)
+    } 
+    else if (description === "Clear"){
+        return (<img src={Sunny} height = "84" width = "84" className = "ImageButton"/>)
+    }
+    else if (description === "Clouds"){
+        return (<img src={Cloudy} height = "84" width = "84" className = "ImageButton"/>)
+    }
+    else{
+        return (<></>)
     }
 }
 const Line = () => {
