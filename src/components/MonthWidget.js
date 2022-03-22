@@ -1,31 +1,32 @@
-import WidgetButton from "./WeatherWidget";
+import WeatherButton from "./WeatherWidget";
 
-const MonthWidget = () => {
+const MonthWidget = (props) => {
+  const {weather} = props;
   return (
     <div className="monthWidget">
-        <ThreeMonth />
+        <ThreeMonth weather={weather}/>
         
     </div>
   )
 }
 
-const ThreeMonth = () => {
+const ThreeMonth = (props) => {
+    const {weather} = props;
     const moment = require('moment');
     var month = moment().add(7,'days').format('MMMM');
     const rows = [];
     rows.push(<h1 className="month">{month}</h1>);
-    for(var i = 7; i<=30;i++){
+    var j =5;
+    for(var i = 7; i<=60;i++){
       if (moment().add(i,'days').format('MMMM') !== month){
         month = moment().add(i,'days').format('MMMM');
         rows.push(<div className="nextMonth"><h1 className="month">{month}</h1></div>);
       }
-      rows.push(<WidgetButton day={moment().add(i,'days').format('Do')}/>)
+      j=j+ 1;
+      rows.push(<WeatherButton weather={weather} key={j} i={j} day={moment().add(i,'days').format('Do')}/>)
     }
     return <div>{rows}</div>;
 }
 
-{/*}<><h1 className="month">{month}</h1>
-        <WidgetButton/>
-        </>{*/}
 
 export default MonthWidget

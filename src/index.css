@@ -161,7 +161,7 @@
   position: absolute;
   width: 33px;
   height: 15px;
-  left: 103px;
+  left: 106px;
   top: 5px;
 }
 
@@ -252,12 +252,12 @@
 }
 .WindT{
   position: absolute;
-  left: 220px;
+  left: 225px;
   top: 20px;
 }
 .RainT{
   position: absolute;
-  left: 140px;
+  left: 125px;
   top: 20px;
 }
 .LineH{

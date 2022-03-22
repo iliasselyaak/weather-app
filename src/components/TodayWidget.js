@@ -2,15 +2,15 @@ import SunnyImage from "../sunny.png"
 import { FaChevronDown } from "react-icons/fa";
 
 
-const TodayWidget = ({icon, dayTemp, nightTemp, rain, wind, soilTemp, moisture}) => {
+const TodayWidget = ({icon, dayTemp, nightTemp, humidity, wind, soilTemp, pressure}) => {
     return (
         <div className = "todayWidget">
             <rect className="btn"/>
             <TMP maxTmp={dayTemp} minTmp={nightTemp}/>
-            <Rain rain={rain}/>
+            <Humidity humidity={humidity}/>
             <Wind wind={wind}/>
             <Soil soilTemp = {soilTemp}/>
-            <Moisture moisture={moisture}/>
+            <Pressure pressure={pressure}/>
             <Image />
             <Line />
             <TriangleButton/>
@@ -26,11 +26,11 @@ const TMP = ({maxTmp, minTmp}) => {
         </div>
    )
 }
-const Rain = ({rain}) => {
+const Humidity = ({humidity}) => {
     return (
         <div className="RainT">
-            <h3>Rain(mm)</h3>
-            <h2>{rain}</h2>
+            <h3>Humidity(%)</h3>
+            <h2>{humidity}</h2>
         </div>
    )
 }
@@ -50,11 +50,11 @@ const Soil = ({soilTemp}) => {
         </div> 
    )
 }
-const Moisture = ({moisture}) => {
+const Pressure = ({pressure}) => {
     return (
         <div className="MoistT">
-            <h3 >Moisture(°C)</h3>
-            <h2 >{moisture}</h2>
+            <h3 >Pressure(hPa)</h3>
+            <h2 >{pressure}</h2>
         </div> 
    )
 }

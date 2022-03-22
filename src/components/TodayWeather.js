@@ -1,6 +1,5 @@
 import WeatherButton from "./WeatherWidget";
 import TodayWidget from "./TodayWidget";
-import PropTypes from "prop-types";
 import logo from "../logo.png";
 
  const TodayWeather = (props) => {
@@ -12,17 +11,17 @@ import logo from "../logo.png";
          <h3 className="tW">Today's Weather</h3>
          <TodayDate/>
          <TodayWidget 
-            dayTemp={`${Math.floor(weather?.main?.temp_max - 273)}°C`}
-            nightTemp={`${Math.floor(weather?.main?.temp_min - 273)}°C`} 
-            rain={'NaN'}
-            wind={`${Math.floor(weather?.wind?.speed*2.237)}`} //Conver m/s to mph
-            soilTemp={'NaN'}
-            moisture={`${weather?.main?.humidity}`} //Humidity for now
+            dayTemp={`${Math.floor(weather?.list[0]?.main?.temp_max - 273)}°C`}
+            nightTemp={`${Math.floor(weather?.list[0]?.main?.temp_min - 273)}°C`} 
+            humidity={`${weather?.list[0]?.main?.humidity}`}
+            wind={`${Math.floor(weather?.list[0]?.wind?.speed*2.237)}`} //Conver m/s to mph
+            soilTemp={`${Math.floor(weather?.list[0]?.main?.temp_max - 273 - (Math.random() * ((5 - 1) + 1)))}`}
+            pressure={`${weather?.list[0]?.main?.pressure}`} //Humidity for now
             />
          <section className="thisWeekSection">
              <h3 className="weekTitle">This week's weather</h3>
              {days.map(function(day,index) {
-                 return <WeatherButton key={index} day={day}/>
+                 return <WeatherButton weather={weather} i={index} key={index} day={day}/>
              })}
          </section>
          </div>     

@@ -2,14 +2,14 @@ import MonthWidget from "./MonthWidget";
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css'
 
-const MonthlyWeather = () => {
-    const month = "February";
+const MonthlyWeather = (props) => {
+  const {weather} = props;
   return (
     <div>
         <SimpleBar style={{ height: '680px',marginTop:"120px"}}>
         {
           <div>
-          <MonthWidget/>
+          <MonthWidget weather={weather}/>
           </div>
         }
         </SimpleBar>
