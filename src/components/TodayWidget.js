@@ -1,10 +1,13 @@
 import { FaChevronDown } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import HourlyForecast from "./HourlyForecast";
 import Sunny from "./../Images/SunnyTodayWidget.png";
 import Snowy from "./../Images/SnowTodayWidget.PNG";
 import Rainy from "./../Images/RainyTodayWidget.PNG";
 import Cloudy from "./../Images/CloudyTodayWidget.png";
 import ThunderStorm from "./../Images/ThunderstormTodayWidget.png";
 import Mist from "./../Images/MistTodayWidget.PNG";
+
 
 const TodayWidget = ({description, dayTemp, nightTemp, humidity, wind, soilTemp, pressure}) => {
     return (
@@ -96,7 +99,9 @@ return (
 const TriangleButton = () => {
     return (
         <div className="TBtn">
-            <FaChevronDown />
+        <Link to="/hourlyforecast">
+            <FaChevronDown/>
+        </Link>
         </div>
     )
 

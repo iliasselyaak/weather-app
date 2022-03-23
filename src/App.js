@@ -1,5 +1,7 @@
 import Forecast from "./components/Forecast";
 import Suggestion from"./components/Suggestion"
+import HourlyForecast from "./components/HourlyForecast";
+import DetailedForecast from "./components/DetailedForecast";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from "axios";
 import React, {useState} from "react";
@@ -19,12 +21,32 @@ function App () {
     form.reset();
   };
 
+  const description = `${weather?.list[0]?.weather[0]?.main}`;
   return (
-    <div className="App">
+    <div className="app"
+    id={
+      (typeof description !== "undefined")
+        ? ((description === "Clear")
+          ? "sunnyApp"
+          : (description === "Rain")
+            ? "rainyApp"
+            : (description === "Clouds")
+              ? "cloudyApp"
+              : (description === "Snow")
+                ? "snowApp"
+                : (description === "Mist")
+                  ? "mistApp"
+                  : (description === "Thunderstorm")
+                    ? "thunderApp"
+                    : "defaultApp")
+        : "defaultApp"}
+    >
     <Router>
         <Routes>
           <Route path='/' element={<Forecast fetchWeather={fetchWeather} updateCity={updateCity} city={city} weather={weather}/>} />
           <Route path='suggestion' element={<Suggestion/>} />
+          <Route path="hourlyforecast" element={<HourlyForecast/>} />
+          <Route path="detailedforecast" element={<DetailedForecast/>} />
         </Routes>
       </Router>
     </div>

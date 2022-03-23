@@ -10,7 +10,7 @@ function Forecast (props) {
   const {fetchWeather,updateCity,city,weather} = props;
 
   return (
-    <div>
+    <div className>
       <centre>
         <header>
           {weather && city !== undefined ? (

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-.App{
-  background-image: url(sunnybackground.png);
+.app{
   background-repeat: no-repeat;
   background-position: top;
   width: 360px;
@@ -17,9 +16,52 @@
   font-family: 'Nunito';
 }
 
+#sunnyApp{
+  background-image: url(Images/SunnyBackground.png);
+}
+
+#defaultApp{
+  background-image: url(Images/DefaultBackground.png);
+}
+
+#rainyApp{
+  background-image: url(Images/RainBackground.png);
+}
+
+#cloudyApp{
+  background-image: url(Images/CloudBackground.png);
+}
+
+#snowApp{
+  background-image: url(Images/SnowBackground.png);
+}
+
+#mistApp{
+  background-image: url(Images/MistBackground.png);
+}
+
+#thunderApp{
+  background-image: url(Images/ThunderstormBackground.png);
+}
+
 .home{
   width: 360px;
   height: 800px;
+}
+
+.home-rect{
+  position: absolute;
+  width: 265px;
+  height: 40px;
+  left: 100px;
+  top: 442px;
+  left: 70px;  
+
+
+  opacity: 65%;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 17px;
 }
 
 .home-logo{
@@ -230,6 +272,7 @@
   left: 20px;
   top: 15px;
 
+
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 150px;
 }
@@ -285,12 +328,21 @@
   position: absolute;
   top:148px;
   left:201.5px;
+  color: black;
+}
+
+.TBtn a{
+  color: black;
 }
 
 .TBRtn{
   position: absolute;
   top: 17px;
   left: 258px;
+}
+
+.TBRtn a{
+  color: black;
 }
 
 
@@ -392,6 +444,14 @@ input:focus::placeholder {
   top: 150px;
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logo-hourly{
+  position: absolute;
+  left: 62px;
+  top: 103px;
+
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .tW{
@@ -527,4 +587,313 @@ input:focus::placeholder {
   color: red;
   top: 20px;
   left: 20px;
+}
+
+.backArrow *{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 20px;
+  top: 25px;
+  color: black;
+}
+
+.hourlyRect{
+  position: absolute;
+  width: 315px;
+  height: 461px;
+  left: 22px;
+  top: 189px;
+  
+  background: #C4C4C4;
+  mix-blend-mode: hard-light;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 13px;
+}
+.hourlyTitles{
+  position: absolute;
+  width: 300px;
+  height: 32px;
+  left: 106px;
+  top: 208px;
+
+  color: #000000;
+}
+
+.hourlyTitles h2{
+  display: inline;
+  margin-right: 20px;
+  
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.045em;
+}
+
+.hourlyValues{
+  position: absolute;
+  width: 300px;
+  height: 32px;
+  left: 93px;
+  top: 25px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.045em;
+
+  color: #000000;
+}
+.hourlyValues h2{
+  display: inline;
+  margin-right: 55px;
+}
+
+.hourly-title{
+  position: absolute;
+  width: 159px;
+  height: 28px;
+  left: 109px;
+  top: 102px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.045em;
+}
+
+.hourly-date{
+  position: absolute;
+  width: 221px;
+  height: 27px;
+  left: 78px;
+  top: 130px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.045em;
+}
+
+
+.CurrentTimeWidget{
+  position: absolute;
+  width: 45px;
+  height: 22px;
+  left: 10px;
+  top: 35px;
+
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  text-align: center;
+  letter-spacing: 0.045em;
+
+  color: #000000;
+}
+.hourlyImageWidget{
+  position: absolute;
+  left: 15px;
+  top: 2px;
+  width: 40px;
+  height: 40px;
+  
+}
+.hourWeather{
+  position: relative;
+  width: 312px;
+  height: 65px;
+  left: 25px;
+  top: 240px;
+}
+
+.hourly-titleD{
+  position: absolute;
+  width: 220px;
+  height: 28px;
+  left: 100px;
+  top: 102px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.045em;
+}
+
+.attributesDesc{
+  position: absolute;
+  left: 44px;
+  top: 330px;
+}
+.attributesDesc h3{
+  margin-bottom: 23px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.045em;
+}
+
+.valuesDesc{
+  position: absolute;
+  left: 260px;
+  top: 330px;
+}
+.valuesDesc h3{
+  margin-bottom: 23px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.045em;
+}
+
+.DescImageWidget{
+  position: absolute;
+  left: 140px;
+  top: 200px;
+
+  width: 70px;
+  height: 70px;
+}
+
+.descTemperature{
+  position: absolute;
+  width: 66px;
+  height: 28px;
+  left: 145px;
+  top: 257px;
+  
+  color: #000000;
+}
+
+.descTemperature h3{
+  
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 34px;
+  text-align: center;
+  letter-spacing: 0.075em;
+}
+
+.good img{
+  position: absolute;
+  left: 31px;
+  top: 374px;
+}
+
+.good h2{
+  position: absolute;
+  left: 100px;
+  top: 372px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+}
+
+.good h3{
+  position: absolute;
+  width: 182px;
+  height: 53px;
+  left: 100px;
+  top: 400px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+}
+
+.normal img{
+  position: absolute;
+  left: 38px;
+  top: 480px;
+}
+
+.normal h2{
+  position: absolute;
+  left: 100px;
+  top: 471px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+}
+
+.normal h3{
+  position: absolute;
+  width: 182px;
+  height: 53px;
+  left: 100px;
+  top: 500px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+}
+
+.bad img{
+  position: absolute;
+  left: 33px;
+  top: 580px;
+
+}
+
+.bad h2{
+  position: absolute;
+  width: 161px;
+  height: 24px;
+  left: 100px;
+  top: 580px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+}
+
+.bad h3{
+  position: absolute;
+  width: 182px;
+  height: 53px;
+  left: 100px;
+  top: 610px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+}
+
+.suggestionRect{
+  position: absolute;
+  width: 315px;
+  height: 550px;
+  left: 22px;
+  top: 189px;
+  
+  background: #C4C4C4;
+  mix-blend-mode: hard-light;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 13px;
 }

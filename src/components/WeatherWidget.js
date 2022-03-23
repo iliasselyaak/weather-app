@@ -5,6 +5,7 @@ import Rainy from "./../Images/RainyWidget.PNG";
 import Cloudy from "./../Images/CloudyWidget.PNG";
 import ThunderStorm from "./../Images/ThunderstormWidget.PNG";
 import Mist from "./../Images/MistWidget.png";
+import { Link } from 'react-router-dom';
 
 
 const WidgetButton = ({weather,i,day}) => {
@@ -92,7 +93,9 @@ const Image = ({description}) => {
 const TriangleRButton = () => {
     return (
         <div className = "TBRtn">
-            <FaChevronRight />
+            <Link to="/detailedforecast">
+                <FaChevronRight />
+            </Link>
         </div>
     )
 }

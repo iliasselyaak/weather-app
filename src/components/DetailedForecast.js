@@ -1,30 +1,61 @@
+import React from 'react';
+import { FaChevronLeft } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import logo from "../logo.png";
-import Menu from "./Menu";
 import Sunny from "./../Images/SunnyWidget.PNG";
 import Snowy from "./../Images/SnowyWidget.PNG";
 import Rainy from "./../Images/RainyWidget.PNG";
 import Cloudy from "./../Images/CloudyWidget.PNG";
 import ThunderStorm from "./../Images/ThunderstormWidget.PNG";
 import Mist from "./../Images/MistWidget.png";
-import good from "./../Images/good.png";
-import normal from "./../Images/normal.png";
-import bad from "./../Images/bad.png";
 
 
-const Suggestion = () => {
+const DetailedForecast = () => {
   const day="19th of February 2022"
   const Description = "Clouds"
   return (
-    <div>
-      <Menu/>
+    <div> 
+      <Return/>
       <Heading day={day}/>
-      <rect className="suggestionRect"/>
+      <rect className="hourlyRect"/>
+      <Attributes />
+      <Values />
       <Icon description = {Description} />
       <Temperature />
-      <Good/>
-      <Normal/>
-      <Bad/>
-      
+    </div>
+ 
+   )
+}
+
+const Heading = ({day}) => {
+  return(
+  <>
+  <img src={logo} height="38" width="36" className="logo-hourly"/>
+  <h1 className='hourly-titleD'> Detailed Forecast</h1>
+  <h3 className='hourly-date'>{day}</h3>
+  </>
+  )
+}
+
+const Return = () => {
+    return(
+    <div>
+        <Link to="/" className="backArrow" >
+        <FaChevronLeft/>
+        </Link>
+    </div>
+    )
+}
+
+const Attributes = () => {
+  return(
+    <div className="attributesDesc">
+      <h3>Humidity(%)</h3>
+      <h3>Wind(mph)</h3>
+      <h3>Soil Temp(°C)</h3>
+      <h3>Pressure(hPa)</h3>
+      <h3>Cloudiness(%)</h3>
+      <h3>Visibility(m)</h3>
     </div>
   )
 }
@@ -53,15 +84,6 @@ const Icon = ({description}) => {
   }
 }
 
-const Heading = ({day}) => {
-  return(
-  <>
-  <img src={logo} height="38" width="36" className="logo-hourly"/>
-  <h1 className='hourly-titleD'> Suggestion of the Day</h1>
-  <h3 className='hourly-date'>{day}</h3>
-  </>
-  )
-}
 const Temperature = () => {
   return(
     <div className="descTemperature">
@@ -71,37 +93,18 @@ const Temperature = () => {
   )
 }
 
-const Good = () =>{
-  return(
-  <div className="good">
-    <img src={good} height="50" width="50"/>
-    <h2>Good condition for</h2>
-    <h3>...</h3>
 
-  </div>
-  )
-}
-
-const Normal = () =>{
+const Values = () => {
   return(
-    <div className="normal">
-      <img src={normal} height="40" width="40"/>
-      <h2>Normal condition for</h2>
-      <h3>...</h3>
+    <div className="valuesDesc">
+      <h3>50</h3>
+      <h3>20</h3>
+      <h3>100</h3>
+      <h3>1000</h3>
+      <h3>20</h3>
+      <h3>5</h3>
     </div>
   )
 }
 
-const Bad = () =>{
-  return(
-    <div className="bad">
-      <img src={bad} height="50" width="50"/>
-      <h2>Bad condition for</h2>
-      <h3>...</h3>
-    </div>
-  )
-}
-
-
-
-export default Suggestion
+export default DetailedForecast
