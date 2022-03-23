@@ -1,10 +1,7 @@
 import {HiOutlineMenu} from "react-icons/hi";
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import './navbar.css';
-import { IconContext } from 'react-icons';
 
 function Menu() {
   const [sidebar, setSidebar] = useState(false);
