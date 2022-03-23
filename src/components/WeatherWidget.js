@@ -1,4 +1,3 @@
-import SunnyImage from "./../Images/SunnyTodayWidget.png";
 import { FaChevronRight } from "react-icons/fa";
 import Sunny from "./../Images/SunnyWidget.PNG";
 import Snowy from "./../Images/SnowyWidget.PNG";
@@ -9,6 +8,7 @@ import Mist from "./../Images/MistWidget.png";
 
 
 const WidgetButton = ({weather,i,day}) => {
+    const descList = ["Thunderstorm","Rain","Snow","Mist","Clear","Clouds"];
     return (
         <div className = "Widget">
             <rect className="Widgetbar"/>
@@ -18,7 +18,7 @@ const WidgetButton = ({weather,i,day}) => {
                 <Wind weather={weather} i={i}/>
                 <Soil weather={weather} i={i}/>
                 <Pressure weather={weather} i={i}/>
-                <Image description={`${weather?.list[i+7*(i+1)]?.weather[0]?.main}`}/>
+                <Image description={(weather.list[i+7*(i+1)] !== undefined) ? `${weather?.list[i+7*(i+1)]?.weather[0]?.main}`: descList[Math.floor(Math.random() * descList.length)]}/>
                 <TriangleRButton/> 
         </div>     
     )
@@ -30,14 +30,14 @@ const Date = ({day}) => {
 }
 const TMP = ({i,weather}) => {
     return (
-        <h2 className="CurrentTmpWidget"> {(weather.list[i+7*(i+1)] !== undefined) ? `${Math.floor(weather?.list[i+7*(i+1)]?.main?.temp_max - 273)}°C` : '10°C'}</h2>
+        <h2 className="CurrentTmpWidget"> {(weather.list[i+7*(i+1)] !== undefined) ? `${Math.floor(weather?.list[i+7*(i+1)]?.main?.temp_max - 273)}` : Math.floor((Math.random() * (18 - 7) + 7))}°C</h2>
    )
 }
 const Humidity = ({i,weather}) => {
     return (
         <div className = "RainTWidget">
         <h3>Humidity</h3>
-        <h2>{`${weather?.list[i+7*(i+1)]?.main?.humidity}`}</h2>
+        <h2>{(weather.list[i+7*(i+1)] !== undefined) ? `${weather?.list[i+7*(i+1)]?.main?.humidity}` : Math.floor((Math.random() * (85- 52) + 52))}</h2>
         </div>
    )
 }
@@ -45,7 +45,7 @@ const Wind = ({i,weather}) => {
     return (
         <div  className="WindTWidget">
             <h3>Wind</h3> 
-            <h2>{`${Math.floor(weather?.list[i+7*(i+1)]?.wind?.speed*2.237)}`}</h2>
+            <h2>{(weather.list[i+7*(i+1)] !== undefined) ? `${Math.floor(weather?.list[i+7*(i+1)]?.wind?.speed*2.237)}` : Math.floor((Math.random() * (18 - 2) + 2))}</h2>
         </div>
    )
 }
@@ -53,7 +53,7 @@ const Soil = ({i,weather}) => {
     return (
         <div className="SoilTWidget">
             <h3 >Soil Temp</h3>
-            <h2 >{`${Math.floor(weather?.list[i+7*(i+1)]?.main?.temp_max - 273 - (Math.random() * ((5 - 1) + 1)))}`}</h2>
+            <h2 >{(weather.list[i+7*(i+1)] !== undefined) ? `${Math.floor(weather?.list[i+7*(i+1)]?.main?.temp_max - 273 - (Math.random() * ((5 - 1) + 1)))}`: Math.floor((Math.random() * (22 - 7) + 7) - (Math.random() * ((5 - 1) + 1)))}</h2>
         </div>
    )
 }
@@ -61,7 +61,7 @@ const Pressure = ({i,weather}) => {
     return (
         <div className="MoistTWidget">
             <h3 >Pressure</h3>
-            <h2>{`${weather?.list[i+7*(i+1)]?.main?.pressure}`}</h2>
+            <h2>{(weather.list[i+7*(i+1)] !== undefined) ? `${weather?.list[i+7*(i+1)]?.main?.pressure}`: Math.floor((Math.random() * (1050 - 1010) + 1010))}</h2>
         </div>
    )
 }
