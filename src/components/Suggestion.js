@@ -11,16 +11,18 @@ import normal from "./../Images/normal.png";
 import bad from "./../Images/bad.png";
 
 
-const Suggestion = () => {
-  const day="19th of February 2022"
-  const Description = "Clouds"
+const Suggestion = (props) => {
+  const {weather} = props;
+  const moment = require('moment');
+  const day = moment().format('Do [of] MMMM YYYY');
+  const Description = `${weather?.list[0]?.weather[0]?.main}`
   return (
     <div>
       <Menu/>
       <Heading day={day}/>
       <rect className="suggestionRect"/>
       <Icon description = {Description} />
-      <Temperature />
+      <Temperature weather={weather}/>
       <Good/>
       <Normal/>
       <Bad/>
@@ -62,11 +64,11 @@ const Heading = ({day}) => {
   </>
   )
 }
-const Temperature = () => {
+const Temperature = ({weather}) => {
   return(
     <div className="descTemperature">
-      <h3>13°C</h3>
-      <h3>Clear</h3>
+      <h3>{`${Math.floor(weather?.list[0]?.main?.temp_max - 273)}°C`}</h3>
+      <h3>{`${weather?.list[0]?.weather[0]?.description}`}</h3>
     </div>
   )
 }

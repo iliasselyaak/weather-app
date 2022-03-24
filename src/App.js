@@ -44,9 +44,9 @@ function App () {
     <Router>
         <Routes>
           <Route path='/' element={<Forecast fetchWeather={fetchWeather} updateCity={updateCity} city={city} weather={weather}/>} />
-          <Route path='suggestion' element={<Suggestion/>} />
-          <Route path="hourlyforecast" element={<HourlyForecast/>} />
-          <Route path="detailedforecast" element={<DetailedForecast/>} />
+          <Route path='suggestion' element={<Suggestion weather={weather}/>} />
+          <Route path="hourlyforecast" element={<HourlyForecast weather={weather}/>} />
+          <Route path="detailedforecast/:i" element={<DetailedForecast weather={weather}/>} />
         </Routes>
       </Router>
     </div>

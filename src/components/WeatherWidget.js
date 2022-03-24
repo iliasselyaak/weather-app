@@ -20,7 +20,7 @@ const WidgetButton = ({weather,i,day}) => {
                 <Soil weather={weather} i={i}/>
                 <Pressure weather={weather} i={i}/>
                 <Image description={(weather.list[i+7*(i+1)] !== undefined) ? `${weather?.list[i+7*(i+1)]?.weather[0]?.main}`: descList[Math.floor(Math.random() * descList.length)]}/>
-                <TriangleRButton/> 
+                <TriangleRButton i={i}/> 
         </div>     
     )
 }
@@ -90,10 +90,10 @@ const Image = ({description}) => {
     }
 }
 
-const TriangleRButton = () => {
+const TriangleRButton = ({i}) => {
     return (
         <div className = "TBRtn">
-            <Link to="/detailedforecast">
+            <Link to={`/detailedforecast/${i}`}>
                 <FaChevronRight />
             </Link>
         </div>

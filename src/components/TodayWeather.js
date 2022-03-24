@@ -18,7 +18,7 @@ import logo from "../logo.png";
             humidity={`${weather?.list[0]?.main?.humidity}`}
             wind={`${Math.floor(weather?.list[0]?.wind?.speed*2.237)}`} //Conver m/s to mph
             soilTemp={`${Math.floor(weather?.list[0]?.main?.temp_max - 273 - (Math.random() * ((5 - 1) + 1)))}`}
-            pressure={`${weather?.list[0]?.main?.pressure}`} //Humidity for now
+            pressure={`${weather?.list[0]?.main?.pressure}`} 
             />
          <section className="thisWeekSection">
              <h3 className="weekTitle">This week's weather</h3>

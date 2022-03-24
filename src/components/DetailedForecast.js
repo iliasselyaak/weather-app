@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaChevronLeft } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import logo from "../logo.png";
 import Sunny from "./../Images/SunnyWidget.PNG";
 import Snowy from "./../Images/SnowyWidget.PNG";
@@ -10,18 +10,22 @@ import ThunderStorm from "./../Images/ThunderstormWidget.PNG";
 import Mist from "./../Images/MistWidget.png";
 
 
-const DetailedForecast = () => {
-  const day="19th of February 2022"
-  const Description = "Clouds"
+const DetailedForecast = ({weather}) => {
+  var {i} = useParams();
+  const moment = require('moment');
+  const day = moment().add('days',parseInt(i)+1).format('Do [of] MMMM YYYY');
+  const descList = ["Thunderstorm","Rain","Snow","Mist","Clear","Clouds"];
+  const randDesc = descList[Math.floor(Math.random() * descList.length)];
+  const Description = (weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ? `${weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.weather[0]?.main}` : randDesc
   return (
-    <div> 
+    <div className> 
       <Return/>
       <Heading day={day}/>
       <rect className="hourlyRect"/>
       <Attributes />
-      <Values />
-      <Icon description = {Description} />
-      <Temperature />
+      <Values weather={weather} i ={i}/>
+      <Icon description = {Description} randDesc={randDesc}/>
+      <Temperature weather={weather} i={i} randDesc={randDesc}/>
     </div>
  
    )
@@ -84,25 +88,28 @@ const Icon = ({description}) => {
   }
 }
 
-const Temperature = () => {
+const Temperature = (props) => {
+  const {weather,i, randDesc} = props;
+  const descList = ["Thunderstorm","Rain","Snow","Mist","Clear","Clouds"];
   return(
     <div className="descTemperature">
-      <h3>13°C</h3>
-      <h3>Clear</h3>
+      <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ? `${Math.floor(weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.main?.temp_max - 273)}` : Math.floor((Math.random() * (18 - 7) + 7))}°C</h3>
+      <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ? `${weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.weather[0]?.description}`: randDesc}</h3>
     </div>
   )
 }
 
 
-const Values = () => {
+const Values = (props) => {
+  const {weather,i} = props;
   return(
     <div className="valuesDesc">
-      <h3>50</h3>
-      <h3>20</h3>
-      <h3>100</h3>
-      <h3>1000</h3>
-      <h3>20</h3>
-      <h3>5</h3>
+      <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ? `${weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.main?.humidity}`: Math.floor((Math.random() * (85- 52) + 52))}</h3>
+      <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ?`${Math.floor(weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.wind?.speed*2.237)}`: Math.floor((Math.random() * (18 - 2) + 2))}</h3>
+      <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ? `${Math.floor(weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.main?.temp_max - 273 - (Math.random() * ((5 - 1) + 1)))}`: Math.floor((Math.random() * (22 - 7) + 7) - (Math.random() * ((5 - 1) + 1)))}</h3>
+      <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ?`${weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.main?.pressure}`: Math.floor((Math.random() * (1050 - 1010) + 1010))} </h3>
+      <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ?`${weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.clouds?.all}`: Math.floor((Math.random() * (100 - 1) + 1))}</h3>
+      <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ?`${weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.visibility}`: Math.floor((Math.random() * (10000 - 9000) + 9000))}</h3>
     </div>
   )
 }

@@ -10,22 +10,22 @@ import ThunderStorm from "./../Images/ThunderstormWidget.PNG";
 import Mist from "./../Images/MistWidget.png";
 
 
-const HourlyForecast = () => {
-const day="19th of February 2022"
-const Description = "Clouds"
-  
+const HourlyForecast = (props) => {
+const {weather} = props;
+const moment = require('moment');
+const day = moment().format('Do [of] MMMM YYYY');
   return (
     <div>
         <Return/>
         <Heading day={day}/>
         <rect className="hourlyRect"/>
         <Titles />
-        <HourWeather description = {Description}/>
-        <HourWeather description = {Description}/>
-        <HourWeather description = {Description}/>
-        <HourWeather description = {Description}/>
-        <HourWeather description = {Description}/>
-        <HourWeather description = {Description}/>
+        <HourWeather i={1} weather={weather} />
+        <HourWeather i={2} weather={weather} />
+        <HourWeather i={3} weather={weather} />
+        <HourWeather i={4} weather={weather} />
+        <HourWeather i={5} weather={weather} />
+        <HourWeather i={6} weather={weather} />
     </div>
     )
 }
@@ -77,21 +77,27 @@ const Icon = ({description}) => {
 
 }
 
-const Values = () => {
+const Values = (props) => {
+  const {i, weather} = props;
   return(
     <div className = "hourlyValues" >
         <span>
-        <h2>50</h2>
-        <h2>30</h2>
-        <h2>100</h2>
+        <h2>{`${Math.floor(weather?.list[i]?.main?.temp_max - 273)}°C`}</h2>
+        <h2>{`${weather?.list[i]?.main?.humidity}`}</h2>
+        <h2>{`${weather?.list[i]?.main?.pressure}`}</h2>
         </span>
     </div>
   )
 }
 
-const Time = () => {
+const Time = ({i}) => {
+  const moment = require('moment');
+  const time = moment().add(i*3,'hours').format('hA')
   return (
-    <h2 className="CurrentTimeWidget"> 11PM</h2>
+    <h2 className="CurrentTimeWidget"> {time}</h2>
+
+
+
  )
 }
 
@@ -105,15 +111,18 @@ const Return = () => {
     )
 }
 
-const HourWeather = ({description}) => {
+const HourWeather = (props) => {
+  const {weather,i} = props;
+  const description = `${weather?.list[i]?.weather[0]?.main}`
   return(
     <div className='hourWeather'>
-      <Values />
-      <Time />
+      <Values i={i} weather={weather}/>
+      <Time i={i}/>
       <Icon description = {description}/>
     </div>
     )
 }
+
 
 
 export default HourlyForecast
