@@ -7,7 +7,7 @@ import ThunderStorm from "./../Images/ThunderstormWidget.PNG";
 import Mist from "./../Images/MistWidget.png";
 import { Link } from 'react-router-dom';
 
-
+//Widget Components
 const WidgetButton = ({weather,i,day}) => {
     const descList = ["Thunderstorm","Rain","Snow","Mist","Clear","Clouds"];
     return (
@@ -24,16 +24,22 @@ const WidgetButton = ({weather,i,day}) => {
         </div>     
     )
 }
+
+//Return Date
 const Date = ({day}) => {
     return (
         <h1 className="DateWidget">{day}</h1>
    )
 }
+
+//Return temperature
 const TMP = ({i,weather}) => {
     return (
         <h2 className="CurrentTmpWidget"> {(weather.list[i+7*(i+1)] !== undefined) ? `${Math.floor(weather?.list[i+7*(i+1)]?.main?.temp_max - 273)}` : Math.floor((Math.random() * (18 - 7) + 7))}°C</h2>
    )
 }
+
+//Return humidity
 const Humidity = ({i,weather}) => {
     return (
         <div className = "RainTWidget">
@@ -42,6 +48,8 @@ const Humidity = ({i,weather}) => {
         </div>
    )
 }
+
+//Return wind speed
 const Wind = ({i,weather}) => {
     return (
         <div  className="WindTWidget">
@@ -50,6 +58,7 @@ const Wind = ({i,weather}) => {
         </div>
    )
 }
+//Return soil temperature
 const Soil = ({i,weather}) => {
     return (
         <div className="SoilTWidget">
@@ -58,6 +67,8 @@ const Soil = ({i,weather}) => {
         </div>
    )
 }
+
+//Return pressure
 const Pressure = ({i,weather}) => {
     return (
         <div className="MoistTWidget">
@@ -66,6 +77,8 @@ const Pressure = ({i,weather}) => {
         </div>
    )
 }
+
+//Return weather icon
 const Image = ({description}) => {
     if (description === "Thunderstorm"){
         return (<img src={ThunderStorm} height = "21" width = "21" className = "ImageWidget"/>)   
@@ -90,6 +103,7 @@ const Image = ({description}) => {
     }
 }
 
+//Return right arrow
 const TriangleRButton = ({i}) => {
     return (
         <div className = "TBRtn">

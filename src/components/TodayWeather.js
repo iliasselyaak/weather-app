@@ -2,6 +2,7 @@ import WeatherButton from "./WeatherWidget";
 import TodayWidget from "./TodayWidget";
 import logo from "../logo.png";
 
+//Returns logo, title, date, outputs data of today's weather from the API and weather widgets for one week.
  const TodayWeather = (props) => {
      const days = addDays();
      const {weather} = props;
@@ -30,6 +31,7 @@ import logo from "../logo.png";
      )
 }
 
+//Returns Date
 const TodayDate = () => {
     const moment = require('moment');
     const todayTime = moment().format('Do [of] MMMM YYYY');
@@ -38,6 +40,7 @@ const TodayDate = () => {
     )
 }
 
+//Increment days and adds it to the list
 const addDays = () => {
     const moment = require('moment');
     const days = [];

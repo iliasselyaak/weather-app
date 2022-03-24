@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
+//Side Menu components
 function Menu() {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
 
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import Location from './Location';
-import Menu from './Menu';
 import logo from "../logo.png";
 
+//Home components with location textbox.
 const Home = (props) => {
     const {updateCity,fetchWeather} = props;
   return (

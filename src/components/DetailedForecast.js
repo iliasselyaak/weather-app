@@ -9,7 +9,7 @@ import Cloudy from "./../Images/CloudyWidget.PNG";
 import ThunderStorm from "./../Images/ThunderstormWidget.PNG";
 import Mist from "./../Images/MistWidget.png";
 
-
+//Detailed Forecast components
 const DetailedForecast = ({weather}) => {
   var {i} = useParams();
   const moment = require('moment');
@@ -31,6 +31,7 @@ const DetailedForecast = ({weather}) => {
    )
 }
 
+//Heading with logo, title and date
 const Heading = ({day}) => {
   return(
   <>
@@ -41,6 +42,7 @@ const Heading = ({day}) => {
   )
 }
 
+//Return arrow
 const Return = () => {
     return(
     <div>
@@ -51,6 +53,7 @@ const Return = () => {
     )
 }
 
+//Weather attributes
 const Attributes = () => {
   return(
     <div className="attributesDesc">
@@ -64,6 +67,7 @@ const Attributes = () => {
   )
 }
 
+//Weather icon
 const Icon = ({description}) => {
   if (description === "Thunderstorm"){
     return (<img src={ThunderStorm} height = "21" width = "21" className = "DescImageWidget"/>)   
@@ -88,9 +92,9 @@ const Icon = ({description}) => {
   }
 }
 
+//Temperature and weather description
 const Temperature = (props) => {
   const {weather,i, randDesc} = props;
-  const descList = ["Thunderstorm","Rain","Snow","Mist","Clear","Clouds"];
   return(
     <div className="descTemperature">
       <h3>{(weather.list[parseInt(i)+7*(parseInt(i)+1)] !== undefined) ? `${Math.floor(weather?.list[parseInt(i)+7*(parseInt(i)+1)]?.main?.temp_max - 273)}` : Math.floor((Math.random() * (18 - 7) + 7))}°C</h3>
@@ -99,7 +103,7 @@ const Temperature = (props) => {
   )
 }
 
-
+//Attributes values
 const Values = (props) => {
   const {weather,i} = props;
   return(

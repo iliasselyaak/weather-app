@@ -8,7 +8,7 @@ import Cloudy from "./../Images/CloudyTodayWidget.png";
 import ThunderStorm from "./../Images/ThunderstormTodayWidget.png";
 import Mist from "./../Images/MistTodayWidget.PNG";
 
-
+//TodayWidget components
 const TodayWidget = ({description, dayTemp, nightTemp, humidity, wind, soilTemp, pressure}) => {
     return (
         <div className = "todayWidget">
@@ -25,6 +25,7 @@ const TodayWidget = ({description, dayTemp, nightTemp, humidity, wind, soilTemp,
     )
 }
 
+//Returns max and minimum temperature
 const TMP = ({maxTmp, minTmp}) => {
     return (
         <div className="Tmp">
@@ -33,6 +34,8 @@ const TMP = ({maxTmp, minTmp}) => {
         </div>
    )
 }
+
+//Returns humidity
 const Humidity = ({humidity}) => {
     return (
         <div className="RainT">
@@ -41,6 +44,8 @@ const Humidity = ({humidity}) => {
         </div>
    )
 }
+
+//Returns wind speed
 const Wind = ({wind}) => {
     return (
         <div className="WindT">
@@ -49,6 +54,8 @@ const Wind = ({wind}) => {
         </div> 
    )
 }
+
+//Returns soil temperature (Note: Soil temperature wasn't obtainable by a free api so its randomly returned.)
 const Soil = ({soilTemp}) => {
     return (
         <div className="SoilT">
@@ -57,6 +64,8 @@ const Soil = ({soilTemp}) => {
         </div> 
    )
 }
+
+//Returns Pressure
 const Pressure = ({pressure}) => {
     return (
         <div className="MoistT">
@@ -65,6 +74,8 @@ const Pressure = ({pressure}) => {
         </div> 
    )
 }
+
+//Return weather icon
 const Image = ({description}) => {
     if (description === "Thunderstorm"){
         return (<img src={ThunderStorm} height = "84" width = "84" className = "ImageButton"/>)   
@@ -88,6 +99,8 @@ const Image = ({description}) => {
         return (<></>)
     }
 }
+
+//Line for styling
 const Line = () => {
 return (
     <div>
@@ -96,6 +109,8 @@ return (
     </div>
 )
 }
+
+//Return down arrow
 const TriangleButton = () => {
     return (
         <div className="TBtn">

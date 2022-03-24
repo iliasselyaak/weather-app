@@ -2,7 +2,7 @@ import React from 'react';
 import {MdLocationOn} from "react-icons/md";
 import { CgEnter } from "react-icons/cg";
 
-
+//Location Text box
 const Location = (props) => {
   const {updateCity, fetchWeather,weather} = props;
   return (
@@ -21,6 +21,7 @@ const Location = (props) => {
   )
 }
 
+//Submit button
 const InputButton = () => {
   return (
       <div className = "locTBtn">

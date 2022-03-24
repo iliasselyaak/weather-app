@@ -9,7 +9,7 @@ import Cloudy from "./../Images/CloudyWidget.PNG";
 import ThunderStorm from "./../Images/ThunderstormWidget.PNG";
 import Mist from "./../Images/MistWidget.png";
 
-
+//Hourly forecast components
 const HourlyForecast = (props) => {
 const {weather} = props;
 const moment = require('moment');
@@ -30,6 +30,7 @@ const day = moment().format('Do [of] MMMM YYYY');
     )
 }
 
+//Heading with logo, title and date
 const Heading = ({day}) => {
     return(
     <>
@@ -40,6 +41,7 @@ const Heading = ({day}) => {
     )
 }
 
+//Attribute Titles
 const Titles = () => {
   return(
     <div className = "hourlyTitles" >
@@ -52,6 +54,7 @@ const Titles = () => {
   )
 }
 
+//Weather Icons
 const Icon = ({description}) => {
       if (description === "Thunderstorm"){
         return (<img src={ThunderStorm} height = "21" width = "21" className = "hourlyImageWidget"/>)   
@@ -76,7 +79,7 @@ const Icon = ({description}) => {
       }
 
 }
-
+//Attribute Values
 const Values = (props) => {
   const {i, weather} = props;
   return(
@@ -90,17 +93,17 @@ const Values = (props) => {
   )
 }
 
+//Time for each 3 hours(API doesn't include hourly)
 const Time = ({i}) => {
   const moment = require('moment');
   const time = moment().add(i*3,'hours').format('hA')
   return (
     <h2 className="CurrentTimeWidget"> {time}</h2>
 
-
-
  )
 }
 
+//Return Arrow
 const Return = () => {
     return(
     <div>
@@ -111,6 +114,7 @@ const Return = () => {
     )
 }
 
+//Attributes Values
 const HourWeather = (props) => {
   const {weather,i} = props;
   const description = `${weather?.list[i]?.weather[0]?.main}`

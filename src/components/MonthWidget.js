@@ -1,5 +1,6 @@
 import WeatherButton from "./WeatherWidget";
 
+//MonthWidget component
 const MonthWidget = (props) => {
   const {weather} = props;
   return (
@@ -10,6 +11,7 @@ const MonthWidget = (props) => {
   )
 }
 
+//Returns weather widget for 60 days
 const ThreeMonth = (props) => {
     const {weather} = props;
     const moment = require('moment');

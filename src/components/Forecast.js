@@ -5,6 +5,7 @@ import MonthlyWeather from "./MonthlyWeather";
 import Menu from "./Menu";
 import Home from "./Home";
 
+//Default state is this weeks weather and import API states. active state stores the section displayed(This week's or 3 months).
 function Forecast (props) {
   const [active, setActive] = useState("TodayWeather")
   const {fetchWeather,updateCity,city,weather} = props;
